@@ -77,29 +77,32 @@ if selected_date:
     if menu:
         if menu['option'] == "KHÔNG CÓ":
             # Xử lý trường hợp không có menu cố định
-            # Sử dụng thông tin từ 'dish_vi' đã được cập nhật
             st.error(f"❌ Ngày {selected_date.strftime('%d/%m/%Y')}: **{menu['dish_vi'].upper()}**")
             st.info("Đây là ngày nghỉ nên không có món ăn. Vui lòng chọn ngày khác!")
         else:
             # Xử lý trường hợp có menu
             st.subheader(f"🎉 {menu['option']}: {menu['dish_vi']}")
             
-            # Hiển thị các thông tin chi tiết
-            col1, col2 = st.columns([1, 2])
+            # --- Bố cục mới: Tiếng Anh Full Width ở trên, Calo và Lựa chọn 2 cột ở dưới ---
+            
+            # 1. Tên tiếng Anh/Mô tả (Full Width)
+            st.markdown(f"""
+            <div style='background-color: #00FFFF; padding: 12px; border-radius: 10px; margin-top: 5px; margin-bottom: 20px;'>
+                <p style='font-weight: bold; margin-bottom: 5px; color: #000000;'>Mô tả / Tên tiếng Anh (English Description):</p>
+                <p style='color: #000000; font-style: italic; font-size: 16px;'>{menu["dish_en"]}</p>
+            </div>
+            """, unsafe_allow_html=True)
+
+            # 2. Calo và Lựa chọn (2 cột bằng nhau)
+            col1, col2 = st.columns(2)
 
             with col1:
-                # Hiển thị Calo
+                # Dùng st.metric để hiển thị Calo. Chuỗi Calo dài sẽ tự động điều chỉnh.
                 st.metric("🔥 Calo ước tính", menu["calories"])
-                # Hiển thị Lựa chọn
-                st.metric("✨ Lựa chọn", menu["option"].split()[-1])
-
+                
             with col2:
-                st.markdown(f"""
-                <div style='background-color: #00FFFF; padding: 12px; border-radius: 10px; margin-top: 5px; height: 100%;'>
-                    <p style='font-weight: bold; margin-bottom: 5px;'>Mô tả / Tên tiếng Anh:</p>
-                    <p style='color: #000000; font-style: italic;'>{menu["dish_en"]}</p>
-                </div>
-                """, unsafe_allow_html=True)
+                # Dùng st.metric để hiển thị Lựa chọn
+                st.metric("✨ Lựa chọn", menu["option"].split()[-1])
             
     else:
         st.warning(f"Không tìm thấy thực đơn cho ngày {selected_date.strftime('%d/%m/%Y')}. Vui lòng chọn một ngày khác!")
