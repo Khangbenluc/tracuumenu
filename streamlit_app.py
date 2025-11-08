@@ -82,13 +82,13 @@ if selected_date:
         else:
             # Xử lý trường hợp có menu
             # Chỉ hiển thị thông tin chung về Lựa chọn
-            st.subheader(f"🎉 Chi tiết Thực đơn Lựa chọn {menu['option'].split()[-1]}")
+            st.subheader(f"🎉 Chi tiết Thực đơn cho Lựa chọn {menu['option'].split()[-1]}")
             
             # --- 1. Món ăn Tiếng Việt (Full Width, #00FF7F - Spring Green) ---
             st.markdown(f"""
             <div style='background-color: #00FF7F; padding: 12px; border-radius: 10px; margin-top: 5px; margin-bottom: 20px;'>
                 <p style='font-weight: bold; margin-bottom: 5px; color: #000000;'>Tên món ăn (Tiếng Việt):</p>
-                <p style='color: #000000; font-style: italic; font-size: 16px;'>{menu["dish_vi"]}</p>
+                <p style='color: #000000; font-style: bold; font-size: 16px;'>{menu["dish_vi"]}</p>
             </div>
             """, unsafe_allow_html=True)
             
@@ -96,7 +96,7 @@ if selected_date:
             st.markdown(f"""
             <div style='background-color: #00FFFF; padding: 12px; border-radius: 10px; margin-top: 5px; margin-bottom: 20px;'>
                 <p style='font-weight: bold; margin-bottom: 5px; color: #000000;'>Mô tả / Tên tiếng Anh (English Description):</p>
-                <p style='color: #000000; font-style: italic; font-size: 16px;'>{menu["dish_en"]}</p>
+                <p style='color: #000000; font-style: bold; font-size: 16px;'>{menu["dish_en"]}</p>
             </div>
             """, unsafe_allow_html=True)
 
