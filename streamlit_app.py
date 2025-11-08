@@ -95,9 +95,9 @@ if selected_date:
 
             with col2:
                 st.markdown(f"""
-                <div style='background-color: #f0f2f6; padding: 15px; border-radius: 10px; margin-top: 5px; height: 100%;'>
+                <div style='background-color: #00FFFF; padding: 12px; border-radius: 10px; margin-top: 5px; height: 100%;'>
                     <p style='font-weight: bold; margin-bottom: 5px;'>Mô tả / Tên tiếng Anh:</p>
-                    <p style='color: #4a4a4a; font-style: italic;'>{menu["dish_en"]}</p>
+                    <p style='color: #000000; font-style: italic;'>{menu["dish_en"]}</p>
                 </div>
                 """, unsafe_allow_html=True)
             
