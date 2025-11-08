@@ -4,11 +4,11 @@ import datetime
 # --- Dữ liệu Thực đơn (Thêm thủ công theo ngày cụ thể) ---
 # CẬP NHẬT: Các ngày đầu tiên của khoảng (vd: 02-11-2025-03-11-2025) được xác định là KHÔNG có món ăn cố định.
 SPECIFIC_MENU_DATA = {
-    # Các ngày KHÔNG có món ăn cố định (Đã cập nhật mô tả theo yêu cầu)
-    datetime.date(2025, 11, 2): {"option": "KHÔNG CÓ", "dish_vi": "không có món ăn (ngày nghỉ)", "calories": "N/A", "dish_en": "No fixed meal scheduled (Transition day)"},
-    datetime.date(2025, 11, 9): {"option": "KHÔNG CÓ", "dish_vi": "không có món ăn (ngày nghỉ)", "calories": "N/A", "dish_en": "No fixed meal scheduled (Transition day)"},
-    datetime.date(2025, 11, 16): {"option": "KHÔNG CÓ", "dish_vi": "không có món ăn (ngày nghỉ)", "calories": "N/A", "dish_en": "No fixed meal scheduled (Transition day)"},
-    datetime.date(2025, 11, 23): {"option": "KHÔNG CÓ", "dish_vi": "không có món ăn (ngày nghỉ)", "calories": "N/A", "dish_en": "No fixed meal scheduled (Transition day)"},
+    # Các ngày KHÔNG có món ăn cố định (Đã cập nhật mô tả tiếng Anh sang "Day off")
+    datetime.date(2025, 11, 2): {"option": "KHÔNG CÓ", "dish_vi": "không có món ăn (ngày nghỉ)", "calories": "N/A", "dish_en": "No meal available (Day off)"},
+    datetime.date(2025, 11, 9): {"option": "KHÔNG CÓ", "dish_vi": "không có món ăn (ngày nghỉ)", "calories": "N/A", "dish_en": "No meal available (Day off)"},
+    datetime.date(2025, 11, 16): {"option": "KHÔNG CÓ", "dish_vi": "không có món ăn (ngày nghỉ)", "calories": "N/A", "dish_en": "No meal available (Day off)"},
+    datetime.date(2025, 11, 23): {"option": "KHÔNG CÓ", "dish_vi": "không có món ăn (ngày nghỉ)", "calories": "N/A", "dish_en": "No meal available (Day off)"},
     
     # Các ngày CÓ món ăn
     datetime.date(2025, 11, 3): {"option": "LỰA CHỌN 1", "dish_vi": "BÚN DỌC MÙNG HẢI SẢN", "calories": "575 kcal", "dish_en": "SEAFOOD DOUBLE TAPE NOODLES"},
