@@ -81,11 +81,18 @@ if selected_date:
             st.info("Đây là ngày nghỉ nên không có món ăn. Vui lòng chọn ngày khác!")
         else:
             # Xử lý trường hợp có menu
-            st.subheader(f"🎉 {menu['option']}: {menu['dish_vi']}")
+            # Chỉ hiển thị thông tin chung về Lựa chọn
+            st.subheader(f"🎉 Chi tiết Thực đơn Lựa chọn {menu['option'].split()[-1]}")
             
-            # --- Bố cục mới: Tiếng Anh Full Width ở trên, Calo và Lựa chọn 2 cột ở dưới ---
+            # --- 1. Món ăn Tiếng Việt (Full Width, #00FF7F - Spring Green) ---
+            st.markdown(f"""
+            <div style='background-color: #00FF7F; padding: 12px; border-radius: 10px; margin-top: 5px; margin-bottom: 20px;'>
+                <p style='font-weight: bold; margin-bottom: 5px; color: #000000;'>Tên món ăn (Tiếng Việt):</p>
+                <p style='color: #000000; font-style: italic; font-size: 16px;'>{menu["dish_vi"]}</p>
+            </div>
+            """, unsafe_allow_html=True)
             
-            # 1. Tên tiếng Anh/Mô tả (Full Width)
+            # 2. Tên tiếng Anh/Mô tả (Full Width, #00FFFF - Cyan)
             st.markdown(f"""
             <div style='background-color: #00FFFF; padding: 12px; border-radius: 10px; margin-top: 5px; margin-bottom: 20px;'>
                 <p style='font-weight: bold; margin-bottom: 5px; color: #000000;'>Mô tả / Tên tiếng Anh (English Description):</p>
@@ -93,7 +100,7 @@ if selected_date:
             </div>
             """, unsafe_allow_html=True)
 
-            # 2. Calo và Lựa chọn (2 cột bằng nhau)
+            # 3. Calo và Lựa chọn (2 cột bằng nhau)
             col1, col2 = st.columns(2)
 
             with col1:
